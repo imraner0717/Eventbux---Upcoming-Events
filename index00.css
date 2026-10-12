@@ -1,0 +1,591 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #d9ccff;
+    color: #222;
+    min-height: 100vh;
+    padding: 50px 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background circles */
+
+.background-circle {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+    z-index: -1;
+}
+
+.circle-one {
+    top: 40px;
+    right: 2%;
+}
+
+.circle-two {
+    bottom: 20px;
+    left: -120px;
+}
+
+/* Main container */
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 25px 35px;
+    position: relative;
+    box-shadow: 0 15px 50px rgba(65, 40, 120, 0.12);
+}
+
+/* Navigation */
+
+.navbar {
+    height: 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    margin-bottom: 10px;
+}
+
+.navbar h3 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 11px;
+}
+
+.join-btn {
+    background: #7445e8;
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 7px;
+}
+
+/* Hero section */
+
+.hero {
+    position: relative;
+    margin: 0 25px;
+}
+
+.hero-image {
+    height: 330px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #172a43;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.05),
+        rgba(0, 0, 0, 0.7)
+    );
+}
+
+.hero-overlay {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 7%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.hero-overlay h1 {
+    font-size: clamp(25px, 3vw, 40px);
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.hero-overlay p {
+    font-size: 10px;
+    margin-top: 12px;
+}
+
+.slider-btn {
+    position: absolute;
+    z-index: 3;
+    top: 45%;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    cursor: pointer;
+}
+
+/* Event information */
+
+.event-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 75%;
+    min-height: 65px;
+    background: rgba(15, 20, 48, 0.9);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    color: white;
+    z-index: 4;
+    padding: 12px 20px;
+}
+
+.event-info > div {
+    padding: 0 12px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.event-info > div:first-child {
+    padding-left: 0;
+}
+
+.event-info > div:last-child {
+    border-right: none;
+}
+
+.event-info small {
+    display: block;
+    font-size: 9px;
+    color: #ccc;
+    margin-bottom: 7px;
+}
+
+.event-info h4 {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/* Booking card */
+
+.booking-card {
+    position: absolute;
+    z-index: 5;
+    right: -5px;
+    top: 155px;
+    width: 245px;
+    padding: 22px 20px;
+    background: white;
+    border-radius: 9px;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.12);
+}
+
+.booking-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.booking-card p {
+    font-size: 10px;
+    color: #888;
+    line-height: 1.6;
+}
+
+.calendar-link {
+    display: block;
+    margin: 15px 0 22px;
+    color: #7545e8;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.book-btn,
+.program-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.book-btn {
+    background: #7545e8;
+    color: white;
+}
+
+.program-btn {
+    background: #f0f0f3;
+    color: #444;
+}
+
+.refund {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+    margin-top: 14px;
+}
+
+/* Upcoming events */
+
+.upcoming {
+    margin: 90px 25px 0;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    font-size: 23px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+}
+
+.filters select {
+    border: 1px solid #eee;
+    background: white;
+    padding: 9px 8px;
+    border-radius: 5px;
+    font-size: 10px;
+    color: #444;
+    cursor: pointer;
+}
+
+/* Event grid */
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.event-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #eee;
+    border-radius: 7px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.025);
+}
+
+.card-image {
+    height: 145px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.price {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: white;
+    color: #333;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 5px 7px;
+    border-radius: 4px;
+}
+
+.price.free {
+    color: #222;
+}
+
+.favorite {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #555;
+}
+
+.card-content {
+    display: flex;
+    gap: 12px;
+    padding: 15px 12px;
+    min-height: 90px;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    min-width: 25px;
+}
+
+.date span {
+    font-size: 9px;
+    color: #777;
+    margin-bottom: 4px;
+}
+
+.date strong {
+    font-size: 16px;
+}
+
+.card-content h4 {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: #888;
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+/* Admission ticket */
+
+.admission-card {
+    position: fixed;
+    bottom: 35px;
+    left: 25px;
+    width: 205px;
+    padding: 22px 18px;
+    background: #7545e8;
+    color: white;
+    border-radius: 9px;
+    box-shadow: 0 10px 30px rgba(80, 40, 180, 0.2);
+    z-index: 10;
+}
+
+.admission-card h4 {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.admission-card p {
+    font-size: 10px;
+    margin-bottom: 12px;
+}
+
+.ticket-price {
+    font-size: 19px !important;
+    font-weight: 700;
+}
+
+.ticket-price small {
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.admission-card button {
+    width: 100%;
+    background: white;
+    color: #7545e8;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 5px;
+    font-weight: 700;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+/* Tablet screens */
+
+@media (max-width: 900px) {
+    body {
+        padding: 25px 15px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .hero {
+        margin: 0;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+
+    .booking-card {
+        right: 10px;
+        width: 210px;
+    }
+
+    .upcoming {
+        margin: 85px 0 0;
+    }
+
+    .event-grid {
+        gap: 12px;
+    }
+
+    .card-image {
+        height: 120px;
+    }
+
+    .section-heading {
+        flex-wrap: wrap;
+    }
+
+    .admission-card {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        width: 100%;
+        margin-top: 25px;
+    }
+}
+
+/* Mobile screens */
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 12px;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+    .hero-image {
+        height: 250px;
+    }
+
+    .hero-overlay {
+        right: 5%;
+    }
+
+    .hero-overlay h1 {
+        font-size: 25px;
+    }
+
+    .event-info {
+        width: 100%;
+        padding: 10px 5px;
+    }
+
+    .event-info > div {
+        padding: 0 6px;
+    }
+
+    .event-info h4 {
+        font-size: 9px;
+    }
+
+    .booking-card {
+        position: static;
+        width: 100%;
+        margin-top: 18px;
+    }
+
+    .upcoming {
+        margin-top: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 20px;
+    }
+
+    .filters {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .filters select {
+        flex: 1;
+        min-width: 90px;
+    }
+
+    .event-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .card-image {
+        height: 110px;
+    }
+
+    .card-content {
+        gap: 7px;
+        padding: 10px 7px;
+    }
+
+    .card-content h4 {
+        font-size: 10px;
+    }
+
+    .card-content p {
+        font-size: 8px;
+    }
+
+    .admission-card {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 380px) {
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-image {
+        height: 160px;
+    }
+}
